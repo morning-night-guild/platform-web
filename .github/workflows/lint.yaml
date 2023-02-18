@@ -9,8 +9,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup frontend
-        uses: ./.github/actions/setup
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Setup yarn
+        run: npm install -g yarn
+        shell: bash
       - name: Install
         working-directory: ./
         run: yarn install
