@@ -1,7 +1,8 @@
 name: diff
 run-name: ${{ github.ref_name }} by @${{ github.actor }} ${{ github.workflow }}
 on:
-  pull_request:
+  schedule:
+    - cron: '0 22 * * *'
 
 jobs:
   diff:
