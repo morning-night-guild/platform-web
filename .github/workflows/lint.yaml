@@ -22,5 +22,4 @@ jobs:
         working-directory: ./
         run: yarn build
       - name: Lint
-        working-directory: ./
         run: yarn xo
