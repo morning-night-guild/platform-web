@@ -1,0 +1,21 @@
+name: diff
+run-name: ${{ github.ref_name }} by @${{ github.actor }} ${{ github.workflow }}
+on:
+  schedule:
+    - cron: '0 22 * * *'
+jobs:
+  diff:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Generate openapi code
+        run: yarn openapi
+      - name: Check diff
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git status --porcelain;
+            exit 1;
+          else
+            echo "no changes";
+          fi
