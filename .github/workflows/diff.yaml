@@ -10,9 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Generate openapi code
-        working-directory: ./
-        run: |
-          yarn openapi
+        run: yarn openapi
       - name: Check diff
         run: |
           if [ -n "$(git status --porcelain)" ]; then

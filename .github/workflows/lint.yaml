@@ -17,11 +17,8 @@ jobs:
         run: npm install -g yarn
         shell: bash
       - name: Install
-        working-directory: ./
         run: yarn install
       - name: Build
-        working-directory: ./
         run: yarn build
       - name: Lint
-        working-directory: ./
         run: yarn xo
