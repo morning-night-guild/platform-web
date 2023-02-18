@@ -1,0 +1,22 @@
+name: frontend lint
+run-name: ${{ github.ref_name }} by @${{ github.actor }} ${{ github.workflow }}
+on:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup frontend
+        uses: ./.github/actions/setup
+      - name: Install
+        working-directory: /
+        run: yarn install
+      - name: Build
+        working-directory: /
+        run: yarn build
+      - name: Lint
+        working-directory: /
+        run: yarn xo
