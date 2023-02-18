@@ -3,7 +3,6 @@ run-name: ${{ github.ref_name }} by @${{ github.actor }} ${{ github.workflow }}
 on:
   schedule:
     - cron: '0 22 * * *'
-
 jobs:
   diff:
     runs-on: ubuntu-22.04
