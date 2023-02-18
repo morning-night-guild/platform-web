@@ -19,7 +19,6 @@ jobs:
       - name: Install
         run: yarn install
       - name: Build
-        working-directory: ./
         run: yarn build
       - name: Lint
         run: yarn xo
