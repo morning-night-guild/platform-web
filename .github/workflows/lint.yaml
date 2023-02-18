@@ -6,7 +6,7 @@ on:
       - .github/workflows/lint.yaml
       - package.json
       - yarn.lock
-      - *.ts
+      - '*.ts'
       - src/**/*.ts
 jobs:
   lint:
