@@ -12,11 +12,11 @@ jobs:
       - name: Setup frontend
         uses: ./.github/actions/setup
       - name: Install
-        working-directory: /
+        working-directory: ./
         run: yarn install
       - name: Build
-        working-directory: /
+        working-directory: ./
         run: yarn build
       - name: Lint
-        working-directory: /
+        working-directory: ./
         run: yarn xo
