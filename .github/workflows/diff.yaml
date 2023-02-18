@@ -10,7 +10,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Generate openapi code
-        working-directory: ./
         run: yarn openapi
       - name: Check diff
         run: |
