@@ -9,7 +9,10 @@
         "preview": "vite preview",
         "xo": "xo --fix",
         "setup": "echo VITE_SERVICE_ENDPOINT=${VITE_SERVICE_ENDPOINT} > .env.local",
-        "openapi": "./openapi.sh"
+        "openapi": "./openapi.sh",
+        "tfinit": "cd terraform && terraform init",
+        "tfmt": "terraform fmt -recursive",
+        "tflint": "terraform fmt -recursive -check && terraform validate"
     },
     "dependencies": {
         "@bufbuild/connect-web": "0.7.0",
