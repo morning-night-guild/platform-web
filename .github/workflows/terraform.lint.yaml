@@ -7,6 +7,8 @@ on:
       - '**.tf'
       - '**.hcl'
       - '**.template'
+env:
+  TF_TOKEN_app_terraform_io: ${{ secrets.TERRAFORM_CLOUD_API_TOKEN }}
 jobs:
   lint:
     runs-on: ubuntu-22.04
