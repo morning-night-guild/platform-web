@@ -256,10 +256,10 @@
   resolved "https://registry.yarnpkg.com/@bufbuild/connect-web/-/connect-web-0.7.0.tgz#fe4f6e503a62d2a982dffb4dd92c078e121f03cf"
   integrity sha512-Un85bR4jOSY76hydaNlRNE8JZdv0cfbDm/VRcUqpsS5FXA7I8L95y4ecqZ6eEDBZ+F4h8hMLZADj3TgkzNkOhg==
 
-"@bufbuild/protobuf@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@bufbuild/protobuf/-/protobuf-1.0.0.tgz#b25c045f8554f92c3723d5bb28e3a2538662f51b"
-  integrity sha512-oH3jHBrZ6to8Qf4zLg7O8KqSY42kQZNBRXJRMp5uSi0mqE4L8NbyMnZHeOsbXmTb0xpptRyH11LfS+KeVhXzAA==
+"@bufbuild/protobuf@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@bufbuild/protobuf/-/protobuf-1.1.0.tgz#249fc602d0ca78564d6666bbffcbbaef9aa905ff"
+  integrity sha512-NYqSqOp+7u37sfQugoJaIWbnQdUTwB0UtfNhIeN71rr/xY8upO9zIvM865Ju7ws/21xbu05RUdC1gNhSggmCYg==
 
 "@chakra-ui/accordion@2.1.8":
   version "2.1.8"
