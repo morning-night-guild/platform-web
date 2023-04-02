@@ -1,8 +1,12 @@
-import { Flex, Divider, Heading, Image, Center, Text } from '@chakra-ui/react';
+import { Flex, Divider, Heading, Image, Center, Text, Button } from '@chakra-ui/react';
+import { v1AuthSignOut, useV1AuthVerify } from '../api';
+import { clear } from '../store';
 
 export type HeaderProps = Record<string, unknown>;
 
 export function Header(props: HeaderProps) {
+    const { mutate } = useV1AuthVerify();
+
     return (
         <>
             <Center>
@@ -13,6 +17,16 @@ export function Header(props: HeaderProps) {
                             <Text display={['none', 'inline', 'inline', 'inline']}>Platform</Text>
                         </Center>
                     </Heading>
+                    <Flex align="center" ml="auto" />
+                    <Button
+                        onClick={async () => {
+                            await v1AuthSignOut();
+                            await mutate();
+                            clear();
+                        }}
+                    >
+                        Sign Out
+                    </Button>
                 </Flex>
             </Center>
             <Divider />

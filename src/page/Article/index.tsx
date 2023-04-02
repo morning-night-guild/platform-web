@@ -1,12 +1,15 @@
+import { useState } from 'react';
 import { Grid, GridItem, Center, Heading, Box, Button } from '@chakra-ui/react';
 import { Header } from '../Header';
-import { useListArticles } from '../../swr/useApiArticle';
+import { useV1ArticleList } from '../../api';
 import { ArticleCard } from './ArticleCard';
-import { useState } from 'react';
 
 export function Article() {
     const [currentIndex, setCurrentIndex] = useState('');
-    const data = useListArticles(currentIndex);
+    const { data } = useV1ArticleList({
+        pageToken: currentIndex,
+        maxPageSize: 20,
+    });
 
     return (
         <>
@@ -22,7 +25,7 @@ export function Article() {
                             gap={6}
                             templateColumns={['repeat(1, 1fr)', 'repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(2, 1fr)']}
                         >
-                            {data.articles.map((article) => {
+                            {data?.articles?.map((article) => {
                                 return (
                                     <GridItem key={article.id} colSpan={1}>
                                         <ArticleCard
@@ -36,7 +39,13 @@ export function Article() {
                             })}
                         </Grid>
                     </Center>
-                    <Button onClick={() => {setCurrentIndex(data.currentIndex ?? '')}}>Read More</Button>
+                    <Button
+                        onClick={() => {
+                            setCurrentIndex(data?.nextPageToken ?? '');
+                        }}
+                    >
+                        Read More
+                    </Button>
                 </GridItem>
                 <GridItem colSpan={2} />
             </Grid>
