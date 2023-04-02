@@ -15,7 +15,7 @@ module.exports = {
             },
         },
         input: {
-            target: 'https://raw.githubusercontent.com/morning-night-guild/platform-app/feature/issue%23101/api/openapi.yaml',
+            target: 'https://raw.githubusercontent.com/morning-night-guild/platform-app/main/api/openapi.yaml',
         },
     },
 };
