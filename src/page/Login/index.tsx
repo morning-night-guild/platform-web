@@ -85,18 +85,21 @@ export function Login() {
                         <InputGroup>
                             <Input
                                 value={password}
-                                type={showPassword? "" : "password"}
+                                type={showPassword ? '' : 'password'}
                                 onChange={(event) => {
                                     setPassword(event.target.value);
                                 }}
                             />
-                            <InputRightElement children={
-                                <Box onClick={() => setShowPassword(!showPassword)} cursor={"pointer"}>
-                                    {
-                                      showPassword? <ViewIcon /> : <ViewOffIcon />
-                                    }
-                                </Box>} 
-                            />
+                            <InputRightElement>
+                                <Box
+                                    cursor="pointer"
+                                    onClick={() => {
+                                        setShowPassword(!showPassword);
+                                    }}
+                                >
+                                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                                </Box>
+                            </InputRightElement>
                         </InputGroup>
                     </FormControl>
                     {showError && <Box>email or password is incorrect</Box>}

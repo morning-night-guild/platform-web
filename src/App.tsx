@@ -23,7 +23,9 @@ function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const { error } = useV1AuthVerify({
         swr: {
-            onErrorRetry() {},
+            onErrorRetry() {
+                // Do not retry
+            },
         },
     });
 
