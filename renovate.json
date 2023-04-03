@@ -16,7 +16,7 @@
         "*"
       ],
       "matchPaths" :[
-        "frontend/package.json"
+        "package.json"
       ],
       "matchUpdateTypes": [
         "minor",
