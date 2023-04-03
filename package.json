@@ -12,7 +12,7 @@
         "openapi": "orval"
     },
     "dependencies": {
-        "@bufbuild/connect-web": "0.7.0",
+        "@bufbuild/connect-web": "0.8.4",
         "@bufbuild/protobuf": "1.0.0",
         "@chakra-ui/icons": "2.0.17",
         "@chakra-ui/react": "2.4.9",
