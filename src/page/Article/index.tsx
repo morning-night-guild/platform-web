@@ -10,6 +10,7 @@ export function Article() {
         pageToken: currentIndex,
         maxPageSize: 20,
     });
+    const [articles, setArticles] = useState(data?.articles?.map((article) => article) || []);
 
     return (
         <>
@@ -25,7 +26,7 @@ export function Article() {
                             gap={6}
                             templateColumns={['repeat(1, 1fr)', 'repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(2, 1fr)']}
                         >
-                            {data?.articles?.map((article) => {
+                            {articles.map((article) => {
                                 return (
                                     <GridItem key={article.id} colSpan={1}>
                                         <ArticleCard
@@ -42,6 +43,7 @@ export function Article() {
                     <Button
                         onClick={() => {
                             setCurrentIndex(data?.nextPageToken ?? '');
+                            setArticles([...articles, ...data?.articles?.map((article) => article) || []]);
                         }}
                     >
                         Read More
